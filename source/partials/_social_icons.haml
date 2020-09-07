@@ -1,0 +1,17 @@
+- article_url       = CGI.escape("https://lixy.tech#{article.url}")
+- article_title     = CGI.escape(article.title)
+
+%nav
+  %ul
+    %li
+      %a.facebook{href: "https://www.facebook.com/sharer/sharer.php?u=#{article_url}",
+                  title: "Share on Facebook"}
+        %i.fab.fa-facebook
+    %li
+      %a.twitter{href: "https://twitter.com/home?status=#{article_title}%3A%0A#{article_url}",
+                title: "Share on Twitter"}
+        %i.fab.fa-twitter
+    %li
+      %a.linkedin{href: "https://www.linkedin.com/shareArticle?mini=true&url=#{article_url}",
+                  title: "Share on Linked In"}
+        %i.fab.fa-linkedin

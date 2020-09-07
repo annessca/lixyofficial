@@ -1,0 +1,36 @@
+.row.post
+  .post-thumbnail.col-lg-5
+    - if article.data.summary_img
+      .frame
+        - if article.data.fa
+          .post-format
+            %span.icon-picture
+              %i.fas{class: article.data.fa}
+        = link_to article do
+          %img.img-fluid{src: "/images/blog/#{article.data.summary_img}"}/
+      %img.hidden-xsd-none.d-sm-block.post-shadow{src: "/images/post-shadow.png"}/
+  .post-excerpt.col-lg-7
+    %h2.title
+      = link_to article.title, article
+    .line-dotted
+    %p
+      = Nokogiri::HTML(article.summary).text
+      = link_to 'Read more', article
+    %p.meta
+      - if article.data.author
+        Written by:
+        %strong
+          = article.data.author
+      on:
+      %strong
+        %time= article.date.strftime('%b %e, %Y')
+    %p.meta
+      tags:
+      - article.tags.each do |tag|
+        = succeed (tag == article.tags.last) ? '' : ',' do
+          = link_to tag, tag_path(tag)
+    .line-dotted
+    .post-share
+      %p Share this post:
+      = partial 'partials/social_icons', locals: {article: article}
+/ .post

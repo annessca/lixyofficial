@@ -1,0 +1,57 @@
+- @meta_description ||= 'LIXY helps companies build high performing distributed software development and engineering teams with the top 1% African software developers. We manage skill assessment, onboarding, and continual learning for all of our engineers.'
+
+!!!
+%html
+
+  = partial 'partials/head', locals: {current_page: current_page}
+
+  %body
+    / Google Tag Manager (noscript)
+    %noscript
+      %iframe{height: 0, src: "https://www.googletagmanager.com/ns.html?id=GTM-N999N63", style: "display:none;visibility:hidden", width: 0}
+    / End Google Tag Manager (noscript)
+
+    %nav#top-nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+      %a.navbar-brand{href: "/#"}
+        %img{ src: "/images/translogo.png", class: "navbar-logo"}/
+      %button.navbar-toggler{aria: {controls: :navControls, expanded: :false, label: 'Toggle navigation'}, data: {target: '#navControls', toggle: :collapse}, type: :button}
+        %span.navbar-toggler-icon
+      #navControls.collapse.navbar-collapse
+        %ul.navbar-nav.ml-auto
+          %li.nav-item= link_to 'Services',          '/services.html',                 class: 'nav-link'
+          %li.nav-item= link_to 'Case Study',        '/case-studies/brightlight.html', class: 'nav-link'
+          %li.nav-item= link_to 'About Us',          '/about.html',                    class: 'nav-link'
+          %li.nav-item= link_to 'Blog',              '/blog/',                         class: 'nav-link'
+          %li.nav-item= link_to 'Partner with LIXY', '/contact.html',                  class: 'nav-link'
+
+    = yield
+
+    - unless current_page.url == '/contact.html'
+      #buttons.fixed-button
+        %span.close-button.btn.btn-close.btn-lg 
+          %i.fas.fa-times.fa-1x
+        %span.show-button
+          %a.contact-button.btn.btn-contact.btn-lg{href: "contact.html"}
+            %i.fas.fa-user-alt.fa-1x
+            &nbsp;Contact Us
+      .row.text-center
+        %h5.col-12= link_to "Find out how LIXY can help you improve your business", "/contact.html"
+
+    %section#footer
+      .row
+        .company-name.col-sm-2
+          %img{ src: "/images/translogo.png", class: "footer-logo"}/
+        .copyright.col-sm-3 &#xA9; Lixy Technologies, Inc.
+
+        %nav.navbar-expand-sm.col-sm-7
+          %ul.nav.navbar-nav#footer-nav
+            %li.nav-item= link_to 'Services',          '/services.html',                 class: 'nav-link'
+            %li.nav-item= link_to 'Case Study',        '/case-studies/brightlight.html', class: 'nav-link'
+            %li.nav-item= link_to 'About Us',          '/about.html',                    class: 'nav-link'
+            %li.nav-item= link_to "Contact Us",        '/contact.html',                  class: 'nav-link'
+            %li.nav-item= link_to 'Blog',              '/blog/',                         class: 'nav-link'
+            %li.nav-item= link_to 'FAQ',               '/faq.html',                      class: 'nav-link'
+            %li.nav-item= link_to 'Partner with LIXY', '/contact.html',                  class: 'nav-link'
+    / #footer
+
+    = partial 'partials/footer_js'

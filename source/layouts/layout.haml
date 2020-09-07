@@ -1,0 +1,14 @@
+= wrap_layout :shared do
+
+  %section#heading
+    .row
+      .heading-text.text-center.col
+        %h3= @title_content
+        - if @subtitle
+          %p= @subtitle
+
+  %section
+    .container
+      .row.main-content.layout-display
+
+        = yield

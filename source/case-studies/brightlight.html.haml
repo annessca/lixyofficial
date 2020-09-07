@@ -1,0 +1,87 @@
+- @title_content    = 'Brightlight Case Study'
+- @subtitle         = "LIXY built a mobile optimized assessment platform to enhance Brightlight's effectiveness."
+
+%section
+  %h3 The Client
+  %img{src: '/images/case-studies/brightlight/educator-and-child.jpg', class: 'thumbnail-img'}
+
+  %p Brightlight Behavior Group works with children and young adults with developmental disabilities, and helps their clients by providing effective, empirically proven behavioral health services. They teach their clients the skills and behaviors they need to live happy and successful lives.
+
+  %p Brightlight helps special needs children learn the skills they need to effectively function in today's society. Their Behavioral Technicians perfom on-site training with the children and their parents, helping the children learn these skills, showing their parents how to reinforce the skills, and track the child's progress.
+
+  %p Each child is evaluated by a child psychologist when Brightlight starts working with them, and periodically throughout their time together. Training programs are created based on the results of these evaluations.
+
+  %p The counselors print out the plan for the day, write the results down on the paper while working with the children, and then send the written results back to a psychologist, who then has to do data entry from the written assessment results.
+
+%section
+  %h3 The Problem
+  %p While Brightlight was doing a wonderful job for their clients, their process was not very efficient:
+
+  %ul
+    %li There was a delay between completing each assessment, and getting the data into their main office.
+    %li Entering the data was quite time consuming as it hand to be entered by hand from the written assessment results.
+    %li Each child's information was stored in a separate spreadsheet, which added administrative overhead.
+    %li The assessments needed to be tracked over time. This became quite complex once they had a large number of children they were working with, due to each child's information being kept in a separate spreadsheet.
+    %li Analyzing data for more than one child was a manual process that had to be redone each time a different report was desired.
+    %li The state of California requires reporting on the results of their work, and colating the data was a tedious and time-consuming process.
+
+  %p As Brightlight's business grew, the overhead of their process started getting in the way of efficiently serving their clients. It also hurt  their ability to grow and help more children.
+
+%section
+  %h3 The Solution
+
+  .device-half-size.iphone-x
+    .notch
+      .camera
+      .speaker
+    .top-bar
+    .sleep
+    .bottom-bar
+    .volume
+    .overflow
+      .shadow.shadow-tr
+      .shadow.shadow-tl
+      .shadow.shadow-br
+      .shadow.shadow-bl
+    .inner-shadow
+    .screen
+      %img{src: '/images/case-studies/brightlight/assessment-mobile-view-2.png', style: 'width: 100%; padding-top: 15px;'}
+
+  %p LIXY met with Brightlight's leadership team to identify the pain points they were experiencing to come up with a system that works both for the Behavioral Technicians working directly with the children, as well as a way for the administrative team to manage the programs.
+
+  %p We went back, created mockups based on our conversations with Brightlight, presented them to the leadership team, took their feedback on what improvements were needed and came to an agreement on what the interface would look like. Once we identified how it should work we began implementation.
+
+  %a{'data-target': '#assessment-details', 'data-toggle': :modal, type: :button, style: 'float: left'}
+    %img{src: '/images/case-studies/brightlight/assessment-details.png', class: 'thumbnail-img1'}
+
+  %p LIXY replaced Brightlight's time-consuming paper and spreadsheet based process with a mobile assessment application. This allows their child care specialists to update the results of each session directly from their phone while working with their clients. The assessment results are then immediately available to Brightlight's administrative team. The child psychologists can review the results of each skill assessment in real time, and adjust the plan if they feel necessary, rather than waiting days before they even see the results.
+
+  %p Back at the main office, the leadership team now have an administrative interface allowing them to view and modify the details of each child's plan, easily create new plans, and track the results of their work over time.
+
+  %a{'data-target': '#assessment-chart', 'data-toggle': :modal, type: :button, style: 'float: right'}
+    %img{src: '/images/case-studies/brightlight/chart.png', class: 'thumbnail-img'}
+
+  %p Brightlight's administration also haves the data available in a secure, central database allowing them to generate and view reports based on up to the moment information, and allows for the easy creation of custom reports as needed.
+
+/ Modals
+#assessment-details.modal.fade{'aria-hidden': :true, 'aria-labelledby': :exampleModalLabel, role: :dialog, tabindex: '-1'}
+  .modal-dialog.modal-xl{role: 'document'}
+    .modal-content
+      .modal-header
+        %button.close{'aria-label': :Close, 'data-dismiss': 'modal', type: 'button'}
+          %span{'aria-hidden': 'true'} ×
+      .modal-body
+        %img{src: '/images/case-studies/brightlight/assessment-details.png', style: 'width: 100%; border: 2px solid #CCC;'}
+      .modal-footer
+        %h5.modal-title Adminstrative panel allowing Brightlight to view and modify the details of each child's program
+
+#assessment-chart.modal.fade{'aria-hidden': :true, 'aria-labelledby': :exampleModalLabel, role: :dialog, tabindex: '-1'}
+  .modal-dialog.modal-xl{role: 'document'}
+    .modal-content
+      .modal-header
+        %button.close{'aria-label': :Close, 'data-dismiss': 'modal', type: 'button'}
+          %span{'aria-hidden': 'true'} ×
+      .modal-body
+        %img{src: '/images/case-studies/brightlight/chart.png', style: 'width: 100%; border: 2px solid #CCC;'}
+      .modal-footer
+        %h5.modal-title Chart showing the history of a child's sessions

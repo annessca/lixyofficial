@@ -1,0 +1,31 @@
+- @title_content = 'Partner With Us'
+
+#contact.wrapper
+  .shadow-overlay
+    .container
+      %section#hero.text-center
+        %h1.rene Stay Connected
+        %h2 We want to connect with people like you.
+        .row.main-content.col-md-10
+          %form#mG61Hd{action: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdXGxaJxueyCQ5gNvCVw-fgui-JNqfwRMczx99cIJSo9ET0Jg/formResponse', method: 'POST', target: '_self'}
+            .form-group.row
+              %label.text-right.col-sm-4.col-form-label{for: :emailAddress} Email
+              .col-sm-8
+                %input.form-control{'aria-label' => 'Your email', name: :emailAddress, required: '', type: :email, placeholder: 'Your email address'}/
+                %small.form-text.text-muted{id: 'emailHelp'}We'll never share your email with anyone else.
+            .form-group.row
+              %label.text-right.col-sm-4.col-form-label{for: 'entry.738616830'} First Name
+              .col-sm-8
+                %input.form-control{'aria-label' => 'First Name', autocomplete: :off, name: 'entry.738616830', required: '', type: :text}/
+            .form-group.row
+              %label.text-right.col-sm-4.col-form-label{for: 'entry.75676961'} Last Name
+              .col-sm-8
+                %input.form-control{'aria-label' => 'Last Name', autocomplete: :off, name: 'entry.75676961', required: '', type: :text}/
+            .form-group.row
+              %label.text-right.col-sm-4.col-form-label{for: 'entry.576768212'} How can we help you?
+              .col-sm-8
+                %textarea.form-control{'aria-label' => 'Message', name: 'entry.576768212'}
+            .form-group.row
+              .col-sm-4
+              .col-sm-8
+                %button.btn.btn-primary{type: :submit} Submit

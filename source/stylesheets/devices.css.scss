@@ -1,0 +1,224 @@
+@mixin device($scale) {
+
+  display: inline-block;
+  position: relative;
+  box-sizing: content-box !important;
+
+  .screen {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    z-index: 3;
+    background: white;
+    overflow: hidden;
+    display: block;
+    border-radius: 1px;
+    box-shadow: 0 0 0 3px * $scale #111;
+  }
+
+  .top-bar, .bottom-bar {
+    height: 3px * $scale;
+    background: black;
+    width: 100%;
+    display: block;
+  }
+
+  .middle-bar {
+    width: 3px * $scale;
+    height: 4px * $scale;
+    top: 0px;
+    left: 90px * $scale;
+    background: black;
+    position: absolute;
+  }
+
+
+  &.iphone-x {
+    width: 375px * $scale;
+    height: 812px * $scale;
+    padding: 26px * $scale;
+    background: #fdfdfd;
+    box-shadow:inset 0 0 11px * $scale 0 black;
+    border-radius: 66px * $scale;
+
+    .overflow {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 66px * $scale;
+      overflow: hidden;
+    }
+
+    .shadow {
+      border-radius: 100%;
+      width: 90px * $scale;
+      height: 90px * $scale;
+      position: absolute;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%,rgba(255,255,255,0) 60%);
+    }
+
+    .shadow-tl {
+      top: -20px * $scale;
+      left: -20px * $scale;
+    }
+
+    .shadow-tr {
+      top: -20px * $scale;
+      right: -20px * $scale;
+    }
+
+    .shadow-bl {
+      bottom: -20px * $scale;
+      left: -20px * $scale;
+    }
+
+    .shadow-br {
+      bottom: -20px * $scale;
+      right: -20px * $scale;
+    }
+
+    &:before {
+      width: calc(100% - #{10px * $scale});
+      height: calc(100% - #{10px * $scale});
+      position: absolute;
+      top: 5px * $scale;
+      content: '';
+      left: 5px * $scale;
+      border-radius: 61px * $scale;
+      background: black;
+      z-index: 1;
+    }
+
+    .inner-shadow {
+      width: calc(100% - #{20px * $scale});
+      height: calc(100% - #{20px * $scale});
+      position: absolute;
+      top: 10px * $scale;
+      overflow: hidden;
+      left: 10px * $scale;
+      border-radius: 56px * $scale;
+      box-shadow: inset 0 0 15px * $scale 0 rgba(white, 0.66);
+      z-index: 1;
+
+      &:before {
+        box-shadow:inset 0 0 20px * $scale 0 #FFFFFF;
+        width: 100%;
+        height: 116%;
+        position: absolute;
+        top: -8%;
+        content: '';
+        left: 0;
+        border-radius: 200px / 112px;
+        z-index: 2;
+      }
+    }
+
+    .screen {
+      border-radius: 40px * $scale;
+      box-shadow: none;
+    }
+
+    .top-bar, .bottom-bar {
+      width: 100%;
+      position: absolute;
+      height: 8px * $scale;
+      background: rgba(black, 0.1);
+      left: 0;
+    }
+
+    .top-bar {
+      top: 80px * $scale;
+    }
+
+    .bottom-bar {
+      bottom: 80px * $scale;
+    }
+
+    .volume, .volume:before, .volume:after, .sleep {
+      width: 3px * $scale;
+      background: #b5b5b5;
+      position: absolute;
+    }
+
+    .volume {
+      left: -3px * $scale;
+      top: 116px * $scale;
+      height: 32px * $scale;
+
+      &:before {
+        height: 62px * $scale;
+        top: 62px * $scale;
+        content: '';
+        left: 0;
+      }
+
+      &:after {
+        height: 62px * $scale;
+        top: 140px * $scale;
+        content: '';
+        left: 0;
+      }
+    }
+
+    .sleep {
+      height: 96px * $scale;
+      top: 200px * $scale;
+      right: -3px * $scale;
+    }
+
+    .camera {
+      width: 6px * $scale;
+      height: 6px * $scale;
+      top: 9px * $scale;
+      border-radius: 100%;
+      position: absolute;
+      left: 154px * $scale;
+      background: #0d4d71;
+    }
+
+    .speaker {
+      height: 6px * $scale;
+      width: 60px * $scale;
+      left: 50%;
+      position: absolute;
+      top: 9px * $scale;
+      margin-left: -30px * $scale;
+      background: #171818;
+      border-radius: 6px * $scale;
+    }
+
+    .notch {
+      position: absolute;
+      width: 210px * $scale;
+      height: 30px * $scale;
+      top: 26px * $scale;
+      left: 108px * $scale;
+      z-index: 4;
+      background: black;
+      border-bottom-left-radius: 24px * $scale;
+        border-bottom-right-radius: 24px * $scale;
+
+        &:before, &:after {
+        content: '';
+        height: 8px * $scale;
+        position: absolute;
+        top: 0;
+        width: 8px * $scale;
+        }
+
+      &:after {
+        background: radial-gradient(circle at bottom left, transparent 0, transparent 70%, black 70%, black 100%);
+        left: -8px * $scale;
+      }
+
+      &:before {
+        background: radial-gradient(circle at bottom right, transparent 0, transparent 70%, black 70%, black 100%);
+        right: -8px * $scale;
+      }
+    }
+  }
+}
+
+.device-half-size { @include device(0.5); }

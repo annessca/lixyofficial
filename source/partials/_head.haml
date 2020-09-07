@@ -1,0 +1,46 @@
+- page_title = "#{@head_title || @title_content} | LIXYtech"
+
+%head
+  / Google Tag Manager
+  :javascript
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N999N63');
+  / End Google Tag Manager
+
+  %title= page_title
+
+  = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: 'Atom Feed'
+
+  / meta
+  %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
+  %meta{charset: 'UTF-8'}/
+  %meta{content: 'width=device-width, initial-scale=1', name: :viewport}/
+  %meta{property: 'og:site_name', content: 'LIXYtech'}/
+  %meta{property: 'og:title', content: page_title}/
+  %meta{property: 'og:url', content: "//lixy.tech#{current_page.url}"}/
+  - if @meta_og_image_url
+    %meta{property: 'og:image', content: "//lixy.tech/images/blog/#{@meta_og_image_url}"}/
+  - if @meta_description
+    %meta{name: :description, content: @meta_description}/
+    %meta{property: 'og:description', content: @meta_description}/
+
+  / css
+  %link{href: '/stylesheets/vendor.css', rel: :stylesheet}/
+  %link{href: '/stylesheets/devices.css', rel: :stylesheet}/
+  %link{href: '/stylesheets/custom.css', rel: :stylesheet}/
+
+  %link{ rel: "icon", type: "image/icon", href: "/images/favicon.ico" }
+
+  / js
+  %script{src: '/vendor/javascripts/jquery.min.js'}
+  %script{src: '/vendor/javascripts/popper.min.js'}
+  %script{src: '/vendor/javascripts/bootstrap.min.js'}
+  %script{src: '/vendor/javascripts/jquery-ui-1.12.1.min.js'}
+  %script{src: '/vendor/javascripts/owl.carousel.min.js'}
+  %script{src: '/vendor/javascripts/isotope.pkgd.min.js'}
+  %script{src: '/vendor/javascripts/wow.min.js'}
+  %script{src: '/vendor/javascripts/jquery.actual.min.js'}
+  %script{src: '/javascripts/script.js'}

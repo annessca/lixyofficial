@@ -1,0 +1,47 @@
+- @title_content     = current_article.title
+- @meta_description  = Nokogiri::HTML(current_article.summary).text
+- @meta_og_image_url = current_article.data.summary_img
+
+= wrap_layout :shared do
+
+  %section#heading
+    .row
+      .heading-text.text-center.col
+        %h3= @title_content
+        %p.authored
+          - if current_article.data.author
+            by #{current_article.data.author}
+          on #{current_article.date.strftime('%b %e, %Y')}
+
+  %section#blog
+    .container
+      .row.main-content
+        %article.post
+          %aside.col-sm-3
+            %h4 Recent Articles
+            %ol
+              - blog.articles[0...10].each do |article|
+                %li
+                  = link_to article.title, article
+                  %span= article.date.strftime('%b %e, %Y')
+            %h4.article-tags Tags
+            %ol.article-tags
+              - blog.tags.each do |tag, articles|
+                %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+            %h4.published By Year
+            %ol.published
+              - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+                %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+          / aside
+
+          - if @meta_og_image_url
+            .post-thumbnail.col-lg-5
+              .frame
+                %img.img-fluid{src: "/images/blog/#{@meta_og_image_url}"}/
+              -#%img.hidden-xsd-none.d-sm-block.post-shadow{src: "/images/post-shadow.png"}/ -# TODO: get position right
+          .col-lg-9
+            = yield
+
+      .row.social-icons
+        .col-lg-6.offset-lg-3.text-center
+          = partial 'partials/social_icons', locals: {article: current_article}

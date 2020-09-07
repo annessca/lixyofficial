@@ -1,0 +1,173 @@
+- @meta_description = 'LIXY helps companies build high performing distributed software development and engineering teams with the top 1% African software developers. We manage skill assessment, onboarding, and continual learning for all of our engineers.'
+
+#heading.wrapper
+  #overlay-1
+    %section#starting#hero.text-center
+      %img{ src: "/images/description.png", class: "center-hero" }/
+/ #heading
+
+/ Our service
+%section#services
+  .container
+    .row.text-center
+      .heading-text.col-lg-6.offset-lg-3.wow.animated.zoomInDown
+        %h3 Our Services
+        %p
+          We provide a wide range of services, including custom software development,
+          team augmentation, direct hiring, as well as setting up remote offices
+          for our larger clients.
+        %hr.quarter-width/
+
+    .main-content
+      .services
+        .row
+          .col-md-4.service
+            .service-icon.text-center
+              %i.fas.fa-code.fa-3x
+            .about-service
+              %h3.text-center Web Application
+              %p.text-center
+                LIXY&#x2019;s team of talented in-house engineers use structured framework
+                programming, best programming practices, coding guidelines and standards.
+                We tailor our solutions to meet our customers&#x2019; individual needs.
+                -#%ul
+                  %li Follow modern best practices for software development
+                  %li Multi-browser compatibility
+                  %li Constantly train to maintain their skills stay on top of the latest programming techniques
+
+          / .col-md-4
+          .col-md-4.service
+            .service-icon.text-center
+              %i.fas.fa-mobile-alt.fa-3x
+            .about-service
+              %h3.text-center Mobile Applications
+              %p.text-center
+                LIXY builds mobile applications using our expertise with native SDKs and
+                cross-platform tools to create products that work on any device or platform.
+                We leverage our years of experience to deliver on-time and under budget.
+          / .col-md-4
+          .col-md-4.service
+            .service-icon.text-center
+              %i.fas.fa-users.fa-3x
+            .about-service
+              %h3.text-center Talent Outsourcing
+              %p.text-center
+                LIXY provides organisations with high quality technical talent for both recruitment
+                and product development purposes at cost effective rates.
+          / .col-md-4
+        / .row
+      / .services
+    / .main-content
+  / .container
+/ #services
+
+/ Why
+%section#about
+  .container
+    .row.text-center
+      .heading-text.col-lg-6.offset-lg-3.wow.animated.zoomInDown
+        %h3 Why LIXY
+        %p We are here to help you execute on your vision.
+        %hr.quarter-width/
+        %br/
+    .row.about-us-text
+      .col-lg-8.offset-lg-2
+        %p.text-center
+          Competitive advantages are created by identifying untapped markets and incorporating
+          them into your plan. Africa is not a well-known source for technology, and that is an
+          opportunity. LIXY identifies, trains, and manages top-quality engineers, allowing you
+          to benefit from dramatically reduced costs and time in finding the right engineers,
+          while still maintaining your high expectations for quality.
+        %p.text-center
+          We augment your team with experienced high-quality engineers, at a fraction of what
+          you would pay for even a fresh graduate in the local market. We take care of the
+          hassle of hiring, provide continuing education, and ensure high performance, so you
+          can focus on building the product you need.
+
+        -#%p.text-center
+          Quality Matters
+
+        -#%p.text-center
+          Quality code matters to us and it should matter to you. Not only will your code be built to meet your current needs, it will be built to facilitate future needs.
+          This is significant when you want to add new features, cross platforms, or make updates down the road.
+          This is also one of the major differences between good code and bad code.
+          All of our software solutions deliver functions and features that are built on-spec, as well as scalable, reliable, and robust.
+
+    / .row
+    .row.main-content
+      .col-lg-4.wow.animated.zoomIn{"data-wow-delay": "0.1s"}
+        %figure
+          %img.pro.img-fluid.mx-auto{src: "images/3-col-icons-web.png"}/
+        %h5.text-center Web Development
+      / .col-lg-4
+      .col-lg-4.wow.animated.zoomIn{"data-wow-delay": "0.1s"}
+        %figure
+          %img.pro.img-fluid.mx-auto{src: "images/3-col-icons-android.png"}/
+        %h5.text-center Android Development
+      / .col-lg-4
+      .col-lg-4.wow.animated.zoomIn{"data-wow-delay": "0.1s"}
+        %figure
+          %img.pro.img-fluid.mx-auto{src: "images/3-col-icons-iphone.png"}/
+        %h5.text-center iOS Development
+      / .col-lg-4
+    / .row
+  / .container
+/ #about
+
+/ Blog
+%section#blog
+  .container
+    .row.text-center
+      .heading-text.col-lg-6.offset-lg-3.wow.animated.zoomInDown
+        %h3 Our Blog
+        %p Sharing knowledge, Accepting challenge.
+        %hr.quarter-width/
+        %br/
+    = partial 'partials/blog_summary', locals: {article: blog.articles.first}
+/ #blog
+
+-#/ Clients
+-#%section#testimonial
+  .container
+    .row.text-center
+      .bg-image.col-lg-12
+        .heading-text.col-lg-6.offset-lg-3.wow.animated.zoomInDown
+          %h3 Testimonials
+          %p Their satisfication, Our inspiration.
+          %hr.quarter-width/
+          %br/
+    .row.main-content
+      .col-lg-6.offset-lg-3
+        #client-speech.owl-carousel.owl-theme
+          .item
+            .row
+              .col-lg-6.offset-lg-3
+                %img.img-circle.img-fluid.mx-auto{src: "images/client1.png"}/
+              .col-lg-12
+                %p.client-comment.text-center
+                  When you form a team, why do you try to form a team? Because teamwork builds trust and trust builds speed.
+            .row.text-center
+              %p.client-name.text-center ----- Noona Nuengthida Sophon
+          .item
+            .row
+              .col-lg-6.offset-lg-3
+                %img.img-circle.img-fluid.mx-auto{src: "images/client2.jpg"}/
+              .col-lg-12
+                %p.client-comment.text-center
+                  I am constantly being asked about individuals. The only way to win is as a team. Football is not about one or two or three star players.
+            .row.text-center
+              %p.client-name -----Md. Aminul Islam Bhuiyan
+          .item
+            .row
+              .col-lg-6.offset-lg-3
+                %img.img-circle.img-fluid.mx-auto{src: "images/client3.png"}/
+              .col-lg-12
+                %p.client-comment.text-center
+                  Individual commitment to a group effort- that is what makes a team work, a company work, a society work, a civilisation work.
+            .row.text-center
+              %p.client-name -----  Jenifar Pink
+        / #client-speech
+      / .col-lg-6
+    / .row
+  / .container
+/ #testimonial
